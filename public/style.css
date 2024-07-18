@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+
+body {
+  background-image: url(./images/sfondo.png);
+  background-size:cover;
+  overflow: hidden;
+  height: 100%;
+  transition: background-image 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat:no-repeat;
+}
+
+/* header */
+
+header,
+header div
+{
+  display: flex;
+  align-items: center;
+}
+
+header {
+  justify-content: space-between;
+  position: fixed;
+  background-color: none;
+  padding: 0.5rem 0;
+  background-color: rgb(24, 50, 67);
+  z-index: 100;
+}
+
+header div {
+  justify-content: center;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+header img {
+  width: 3rem;
+}
+
+header div p {
+  font-size: 1.3rem;
+  margin: 0;
+  color: rgb(243, 215, 53);
+}
+
+
+/* search form */
+
+.question-form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: height 1s ease-in-out;
+}
+
+h1 {
+  text-transform: capitalize;
+  transition: font-size 1s ease;
+}
+
+#smaller-h1{
+  font-size: 2rem;
+}
+
+.form {
+  width: 300px;
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  background-color: rgb(24, 50, 67);
+  border:2px solid rgb(18, 29, 37) ;
+  color: white;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: rgb(243, 215, 53);
+  border:2px solid rgb(203, 171, 45) ;
+}
+
+.button:active {
+  background-color: rgb(243, 167, 53);
+  border:2px solid rgb(231, 154, 30) ;
+}
+
+@media screen and (max-width: 576px) {
+  header div p{
+    display: none;
+  }
+
+  h1 {
+    padding-bottom: 2rem;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: fit-content;
+    padding: 0.3rem 1.5rem;
+  }
+}
+
+/* weather box */
+
+.weather-container,
+.weather-descriptions,
+.data{
+  display: flex;
+  justify-content: center;
+}
+
+.weather-container {
+  height: fit-content;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.weather-descriptions{
+  width: 55%;
+  height: 350px;
+  padding: 1rem 5rem 3rem 5rem;
+  border-radius: 4rem;
+  background:rgb(224, 212, 235);
+  box-shadow: inset 0 0 20px #e8f852;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.city-not-found-error{
+  visibility: hidden;
+}
+
+h3{
+  text-transform: capitalize;
+  font-weight: bolder;
+  color: rgb(9, 11, 32);
+}
+
+.data{
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 3rem;
+}
+
+.weather-data:nth-child(2){
+  border-left: 2px solid black;
+  padding-left: 1rem;
+}
+
+.weather-data p{
+  font-size: 1.3rem;
+  display: inline;
+  text-align: left;
+  margin: 0;
+  color: rgb(9, 11, 32);
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+}
+
+#gradi {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+#description {
+  font-size: 2rem;
+  text-wrap: nowrap;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .question-form{
+    padding-top: 2rem;
+  }
+
+  .weather-descriptions{
+    width: 90%;
+    padding: 1rem 1rem 2.5rem 1rem;
+  }
+
+  .data {
+    gap:1.5rem
+  }
+
+  #gradi{
+    font-size: 2.5rem;
+  }
+
+  .weather-data p{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .weather-descriptions{
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .weather-descriptions{
+    width: 65%;
+  }
+}
+
+
