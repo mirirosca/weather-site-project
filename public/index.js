@@ -8,15 +8,13 @@ $(".form-control").keypress(function(event){
   }
 });
 
-const API_KEY= "8c7dfa1a8456e8e04b60d58fe0b92a33";
 
 
 async function checkWeather(city){
 
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
   
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`/weather?city=${city}`);
     if (!response.ok) {
       throw new Error("could not fetch weather data");
     
