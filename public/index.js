@@ -9,17 +9,14 @@ $(".form-control").keypress(function(event){
 });
 
 
-
-async function checkWeather(city){
-
-  
+async function checkWeather(city) {
+  const apiUrl = `/weather?city=${city}`;
   try {
-    const response = await fetch(`/weather?city=${city}`);
-    if (!response.ok) {
-      throw new Error("could not fetch weather data");
-    
-    }
-      var data = await response.json();
+    const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error('Failed to fetch weather data');
+      }
+      const data = await response.json();
       console.log(data);
 
       $("h3").html(data.name);
@@ -30,17 +27,18 @@ async function checkWeather(city){
       $("#wind").html(`Wind: ${data.wind.speed}km/h`);
       $("#description").html(`${data.weather[0].description} ${displayEmoji(data.weather[0].id)}`);
 
-  }catch (error) {
-    console.error(error.message);
-    $("h3").html("city not found");
-    $("#gradi").html("");
-    $("#temp-max").html("Temp Max:");
-    $("#temp-min").html("Temp Min:");
-    $("#humidity").html("Humidity:");
-    $("#wind").html("Wind");
-    $("#description").html("");
-  }
+    } catch (error) {
+      console.error(error.message);
+      $("h3").html("city not found");
+      $("#gradi").html("");
+      $("#temp-max").html("Temp Max:");
+      $("#temp-min").html("Temp Min:");
+      $("#humidity").html("Humidity:");
+      $("#wind").html("Wind");
+      $("#description").html("");
+    }
 }
+
 
 submitBtn.addEventListener("click", function(event){
 
