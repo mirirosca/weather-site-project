@@ -4,7 +4,7 @@
   "description": "Un progetto per mostrare il meteo utilizzando un'API",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
